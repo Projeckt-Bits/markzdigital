@@ -1,0 +1,63 @@
+.NavContainer {
+}
+.NavBar {
+  position: relative;
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.LogoBackground {
+  position: absolute;
+  left: 18vw;
+  height: 6.9vw;
+  width: 6.9vw;
+  border-radius: 50%;
+  background-color: #2e2e2e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.5vw 0.5vw 1vw #2e2e2e81;
+  transition: all ease-in-out 100ms;
+}
+.Logo {
+  position: absolute;
+  height: 2.7vw;
+  width: 2.7vw;
+  transition: all ease-in-out 100ms;
+}
+.LogoBackground:hover {
+  height: 7.2vw;
+  width: 7.2vw;
+  .Logo {
+    height: 3vw;
+    width: 3vw;
+  }
+}
+.NavLinks {
+  position: absolute;
+}
+.NavLink {
+  position: relative;
+  padding: 2vw;
+  font-family: var(--secondaryFont);
+  font-size: 1vw;
+  font-weight: 600;
+  transition: all ease-in-out 100ms;
+}
+.NavLink:hover {
+  font-weight: 800;
+}
+.LogInBtn,
+.SignUpBtn {
+  position: absolute;
+  font-size: 1vw;
+  font-weight: 600;
+}
+.LogInBtn {
+    right: 24vw;
+}
+.SignUpBtn {
+    right: 18vw;
+}
