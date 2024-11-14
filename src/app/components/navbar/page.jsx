@@ -6,18 +6,18 @@ const LogoUrl =
 
 function NavBar() {
   return (
-    <nav className={Styles.NavContainer}>
+    <div className={Styles.NavContainer}>
       <div className={Styles.NavBar}>
-        <div className={Styles.LogoBackground}>
-          <div className={Styles.Logo}>
-            <Image
-              src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
-              fill={true}
-              loading="lazy"
-              alt="Markz Digital Logo"
-            />
+          <div className={Styles.LogoBackground}>
+            <div className={Styles.Logo}>
+              <Image
+                src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
+                fill={true}
+                loading="lazy"
+                alt="Markz Digital Logo"
+              />
+            </div>
           </div>
-        </div>
         <div className={Styles.NavLinks}>
           <a href="#" className={Styles.NavLink}>
             home
@@ -32,7 +32,7 @@ function NavBar() {
         <button className={Styles.LogInBtn}>Log In</button>
         <button className={Styles.SignUpBtn}>Sign Up</button>
       </div>
-    </nav>
+    </div>
   );
 }
 
