@@ -37,7 +37,7 @@ async function HomePage() {
             want your dashboard to look like this?
           </h2>
           <p className={Styles.LandingDesc}>
-            Well, now it's possible!<br></br> Kudos to Markz Digital Team,
+            Well, now it&aposs possible!<br></br> Kudos to Markz Digital Team,
             featuring personalised marketing and scaling plans for their
             esteemed clients.
           </p>

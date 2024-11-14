@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import Styles from "../navbar/navbar.module.scss";
 const LogoUrl =
   "../../../../public/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg";
@@ -10,7 +11,7 @@ function NavBar() {
       <div className={Styles.NavBar}>
           <div className={Styles.LogoBackground}>
             <div className={Styles.Logo}>
-              <a href="/"></a>
+              <Link href="/"></Link>
               <Image
                 src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
                 fill={true}
@@ -20,15 +21,15 @@ function NavBar() {
             </div>
           </div>
         <div className={Styles.NavLinks}>
-          <a href="/" className={Styles.NavLink}>
+          <Link href="/" className={Styles.NavLink}>
             home
-          </a>
-          <a href="/services" className={Styles.NavLink}>
+          </Link>
+          <Link href="/services" className={Styles.NavLink}>
             services
-          </a>
-          <a href="/aboutus" className={Styles.NavLink}>
+          </Link>
+          <Link href="/aboutus" className={Styles.NavLink}>
             about us
-          </a>
+          </Link>
         </div>
         <button className={Styles.LogInBtn}>Log In</button>
         <button className={Styles.SignUpBtn}>Sign Up</button>
