@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export const metadata = {
   title: "Markz Digital",
-  description: "Your Bridge to the World!",
+  description: "Your Messenger to the World!",
 };
 
 export default function RootLayout({ children }) {

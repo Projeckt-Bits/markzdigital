@@ -10,6 +10,7 @@ function NavBar() {
       <div className={Styles.NavBar}>
           <div className={Styles.LogoBackground}>
             <div className={Styles.Logo}>
+              <a href="/"></a>
               <Image
                 src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
                 fill={true}
@@ -19,13 +20,13 @@ function NavBar() {
             </div>
           </div>
         <div className={Styles.NavLinks}>
-          <a href="#" className={Styles.NavLink}>
+          <a href="/" className={Styles.NavLink}>
             home
           </a>
-          <a href="#" className={Styles.NavLink}>
+          <a href="/services" className={Styles.NavLink}>
             services
           </a>
-          <a href="#" className={Styles.NavLink}>
+          <a href="/aboutus" className={Styles.NavLink}>
             about us
           </a>
         </div>

@@ -64,10 +64,22 @@
   font-size: 1vw;
   font-weight: 600;
   cursor: pointer;
+  transition: all ease-in-out 100ms;
 }
 .LogInBtn {
   right: -16vw;
+  border: 0.18vw solid white;
+  background-color: #00000000;
+  color: white;
+}
+.LogInBtn:hover {
+  background-color: #ffffff45;
 }
 .SignUpBtn {
   right: -18vw;
+  background-color: #2e2e2ed7;
+  color: white;
+}
+.SignUpBtn:hover {
+  background-color: #2e2e2e;
 }

@@ -1,3 +1,5 @@
+//CSS For Home Page
+//Landing Section
 .LandingSection {
   position: relative;
   width: 100vw;
@@ -9,6 +11,7 @@
   background-size: 400% 400%;
   animation: BackDropAnim 16s ease-in-out infinite;
 }
+//Div Background Gradient Animation KeyFrames
 @keyframes BackDropAnim {
   0% {
     background-position: 0% 50%;
@@ -20,6 +23,34 @@
     background-position: 0% 50%;
   }
 }
+
+//Scrolling Text Behind MacBook Reveal Animation
+//Div Containing Scrolling Text
+.Marquee {
+  position: absolute;
+  top: 18vw;
+  width: 200vw;
+}
+
+.MarqueeInner {
+  transform: translate3d(-6vw, 0, 0);
+  animation: MarqueeAnim 5s linear infinite;
+}
+.Marquee span {
+  font-size: 12vw;
+  padding-right: 2vw;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+@keyframes MarqueeAnim {
+  0% {
+      transform: translate3d(80vw, 0, 0);
+  }
+  100% {
+      transform: translate3d(-230vw, 0, 0);
+  }
+}
 .MacBookAnim {
   position: relative;
   margin-top: 3vw;
@@ -28,9 +59,49 @@
   aspect-ratio: 16/9;
   width: 100%;
 }
+.Container {
+  position: relative;
+}
 .QuestionToUser {
   position: relative;
   top: -6vw;
   font-size: 2vw;
+  font-weight: 700;
   color: rgb(255, 255, 255);
+}
+.LandingDesc {
+  position: relative;
+  top: -5.4vw;
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.LogInBtn,
+.SignUpBtn {
+  position: relative;
+  top: -3vw;
+  width: 6vw;
+  height: 3vw;
+  margin: 1vw;
+  border: none;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+}
+.LogInBtn {
+  border: 0.18vw solid white;
+  background-color: #00000000;
+  color: white;
+}
+.LogInBtn:hover {
+  background-color: #ffffff45;
+}
+.SignUpBtn {
+  background-color: #2e2e2ed7;
+  color: white;
+}
+.SignUpBtn:hover {
+  background-color: #2e2e2e;
 }

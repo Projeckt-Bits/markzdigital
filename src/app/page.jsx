@@ -21,16 +21,31 @@ async function HomePage() {
     <>
       <NavBar />
       <div className={Styles.LandingSection}>
-      <div className={Styles.VideoContainer}>
-        <div className={Styles.MacBookAnim}>
-          <video className={Styles.AnimVideo} playsInline muted autoPlay loop>
-            <source src="/assets/videos/MacBookAnim.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
+        <div className={Styles.Container}>
+          <div className={Styles.Marquee}>
+            <div className={Styles.MarqueeInner}aria-hidden="true">
+              <span>Your Messenger To The World!</span>
+            </div>
+          </div>
+          <div className={Styles.MacBookAnim}>
+            <video className={Styles.AnimVideo} playsInline muted autoPlay loop>
+              <source src="/assets/videos/MacBookAnim.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 className={Styles.QuestionToUser}>
+            want your dashboard to look like this?
+          </h2>
+          <p className={Styles.LandingDesc}>
+            Well, now it's possible!<br></br> Kudos to Markz Digital Team,
+            featuring personalised marketing and scaling plans for their
+            esteemed clients.
+          </p>
+          <button className={Styles.LogInBtn}>Log In</button>
+          <button className={Styles.SignUpBtn}>Sign Up</button>
         </div>
-        <h2 className={Styles.QuestionToUser}>want your dashboard to look like this?</h2>
       </div>
-      </div>
+      <div className={Styles.IntroductionSection}></div>
     </>
   );
 }
