@@ -25,10 +25,10 @@ function NavBar() {
           <Link href="/" onClick={() => window.reload()} className={Styles.NavLink}>
             home
           </Link>
-          <Link href="/services" className={Styles.NavLink}>
+          <Link href="/services" onClick={() => window.reload()} className={Styles.NavLink}>
             services
           </Link>
-          <Link href="/aboutus" className={Styles.NavLink}>
+          <Link href="/aboutus" onClick={() => window.reload()} className={Styles.NavLink}>
             about us
           </Link>
         </div>
