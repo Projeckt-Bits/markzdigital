@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -21,9 +22,9 @@ function NavBar() {
           </div>
         </div>
         <div className={Styles.NavLinks}>
-          <a href="/" className={Styles.NavLink}>
+          <Link href="/" onClick={() => window.reload()} className={Styles.NavLink}>
             home
-          </a>
+          </Link>
           <Link href="/services" className={Styles.NavLink}>
             services
           </Link>
