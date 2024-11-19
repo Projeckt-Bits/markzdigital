@@ -4,8 +4,9 @@
 }
 .NavBar {
   position: relative;
+  top: 0;
   width: 100vw;
-  height: 7.2vw;
+  height: 120px;
   background-color: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px);
   display: flex;
@@ -16,8 +17,8 @@
 .LogoBackground {
   position: relative;
   left: -18vw;
-  height: 4.5vw;
-  width: 4.5vw;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   background-color: #2e2e2e;
   cursor: pointer;
@@ -29,20 +30,20 @@
 }
 .Logo {
   position: absolute;
-  height: 1.8vw;
-  width: 1.8vw;
+  height: 30px;
+  width: 30px;
   transition: all ease-in-out 100ms;
 }
 .NavLinks {
   position: relative;
-  width: 30vw;
-  left: 3.4vw;
+  text-align: center;
 }
 .NavLink {
   position: relative;
+  left: 1.5vw;
   padding: 1vw;
   border-radius: 0.5vw;
-  margin: 2vw;
+  margin: 1.5vw;
   color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(0px);
@@ -54,33 +55,43 @@
   background-color: rgba(255, 255, 255, 0.27);
   backdrop-filter: blur(18px);
 }
-.LogInBtn,
-.SignUpBtn {
+.DashboardBtn {
   position: relative;
-  width: 6vw;
-  height: 3vw;
-  padding: auto;
+  right: -18vw;
+  width: 150px;
+  height: 60px;
   border: none;
-  border-radius: 0.5vw;
+  border-radius: 10px;
   font-size: 1vw;
   font-weight: 600;
   cursor: pointer;
   transition: all ease-in-out 100ms;
-}
-.LogInBtn {
-  right: -16vw;
-  border: 0.18vw solid white;
-  background-color: #00000000;
-  color: white;
-}
-.LogInBtn:hover {
-  background-color: #ffffff45;
-}
-.SignUpBtn {
-  right: -18vw;
   background-color: #2e2e2ed7;
   color: white;
 }
-.SignUpBtn:hover {
+.DashboardBtn:hover {
   background-color: #2e2e2e;
+}
+
+//Responsive Design
+@media only screen and (max-width: 600px) {
+  .NavBar {
+    height: 90px;
+  }
+  .LogoBackground {
+    width: 60px;
+    height: 60px;
+  }
+  .Logo {
+    width: 21px;
+    height: 21px;
+  }
+  .NavLinks {
+    display: none;
+  }
+  .DashboardBtn {
+    width: 105px;
+    height: 45px;
+    font-size: 2.7vw;
+  }
 }

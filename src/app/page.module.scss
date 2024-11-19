@@ -2,7 +2,6 @@
 //Landing Section
 .LandingSection {
   position: relative;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +23,10 @@
   }
 }
 
+//Container
+.Container {
+  position: relative;
+}
 //Scrolling Text Behind MacBook Reveal Animation
 //Div Containing Scrolling Text
 .Marquee {
@@ -31,60 +34,65 @@
   top: 18vw;
   width: 200vw;
 }
-
+//Div Animation
 .MarqueeInner {
   transform: translate3d(-6vw, 0, 0);
   animation: MarqueeAnim 5s linear infinite;
 }
+//Div Text
 .Marquee span {
-  font-size: 12vw;
+  font-size: 9vw;
   padding-right: 2vw;
   font-weight: 600;
   color: #2e2e2e;
 }
-
+//Scrolling Text Animation
 @keyframes MarqueeAnim {
   0% {
-      transform: translate3d(80vw, 0, 0);
+    transform: translate3d(80vw, 0, 0);
   }
   100% {
-      transform: translate3d(-230vw, 0, 0);
+    transform: translate3d(-230vw, 0, 0);
   }
 }
+//MacBook Animation Container
 .MacBookAnim {
   position: relative;
   margin-top: 3vw;
 }
+//VideoContainer
 .AnimVideo {
   aspect-ratio: 16/9;
   width: 100%;
 }
-.Container {
-  position: relative;
-}
+//"want your dashboard to look like this?" Title
 .QuestionToUser {
   position: relative;
   top: -6vw;
-  font-size: 2vw;
+  font-size: 2.1vw;
   font-weight: 700;
   color: rgb(255, 255, 255);
 }
+//Description
 .LandingDesc {
   position: relative;
-  top: -5.4vw;
+  top: -6.3vw;
   font-size: 1.2vw;
   font-weight: 600;
   color: rgb(255, 255, 255);
 }
+//Login & SignUp Button
 .LogInBtn,
 .SignUpBtn {
   position: relative;
-  top: -3vw;
-  width: 6vw;
-  height: 3vw;
-  margin: 1vw;
+  width: 125px;
+  height: 60px;
+  top: -3.3vw;
+  margin-left: 1vw;
+  margin-left: 1.8vw;
+  margin-right: 1.8vw;
   border: none;
-  border-radius: 0.5vw;
+  border-radius: 10px;
   font-size: 1vw;
   font-weight: 600;
   cursor: pointer;
@@ -104,4 +112,125 @@
 }
 .SignUpBtn:hover {
   background-color: #2e2e2e;
+}
+
+//Introduction Section
+.IntroductionSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #929292;
+}
+.ColumnPlaceholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72vw;
+}
+//Marketing Graphic Image
+.MarketingGraphic {
+  position: relative;
+  margin-right: 6vw;
+  width: 36vw;
+  height: 36vw;
+}
+.TextPlaceholder {
+  position: relative;
+  width: 30vw;
+  flex-direction: column;
+}
+.ProfessionQuestion {
+  position: relative;
+  margin-bottom: 1.5vw;
+  min-height: 2.8vw;
+  font-size: 2.1vw;
+  font-weight: 700;
+  color: #2e2e2e;
+  white-space: pre-wrap; /* Keeps line breaks */
+  border-right: 2px solid #2e2e2e;
+  display: inline-block;
+  animation: CursorBlink 0.7s steps(2, start) infinite;
+}
+@keyframes CursorBlink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.ProfessionDesc {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Responsive Design
+@media only screen and (max-width: 600px) {
+  .LandingSection {
+    flex-direction: column;
+  }
+  .Marquee {
+    top: 33vw;
+  }
+  .Marquee span {
+    font-size: 9vw;
+  }
+  .MacBookAnim {
+    margin-top: 20vw;
+    left: -11.5vw;
+  }
+  .AnimVideo {
+    width: 120%;
+  }
+  .QuestionToUser {
+    top: -6vw;
+    font-size: 4vw;
+  }
+  .LandingDesc {
+    top: -6vw;
+    padding: 2.7vw;
+    font-size: 2.4vw;
+  }
+  .LogInBtn,
+  .SignUpBtn {
+    width: 95px;
+    height: 45px;
+    font-size: 2.7vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-bottom: 3.6vw;
+  }
+  .LogInBtn {
+    border: 0.36vw solid white;
+  }
+  .IntroductionSection, .ColumnPlaceholder {
+    flex-direction: column;
+  }
+  .ColumnPlaceholder {
+    width: 90vw;
+  }
+  .MarketingGraphic {
+    width: 63vw;
+    height: 63vw;
+    left: 3.6vw;
+  }
+  .ProfessionQuestion {
+    position: relative;
+    font-size: 4vw;
+  }
+  .TextPlaceholder {
+    width: 90vw;
+    text-align: center;
+  }
 }

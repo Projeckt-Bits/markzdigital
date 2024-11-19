@@ -1,29 +1,62 @@
+"use client";
 import Image from "next/image";
 import Styles from "./page.module.scss";
 import NavBar from "./components/navbar/page";
 
-async function fetchResult() {
-  const { GoogleGenerativeAI } = require("@google/generative-ai");
+const texts = [
+  "are you a content creator?",
+  "do you own a business?",
+  "want more leads?",
+];
+const speed = 100; // Typing speed in milliseconds
+const pause = 1000; // Pause before typing/backspacing in milliseconds
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  const genAI = new GoogleGenerativeAI(
-    "AIzaSyBCMmBQrYr97Uo-BXzW65nG2E7sCaZo0Vw"
-  );
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+function typeWriter() {
+  const element = document.getElementById("typewriter");
+  const currentText = texts[textIndex];
 
-  const prompt = "Explain how AI works";
+  if (!isDeleting) {
+    // Typing forward
+    element.innerHTML += currentText.charAt(charIndex);
+    charIndex++;
 
-  const result = await model.generateContent(prompt);
-  console.log(result.response.text());
+    if (charIndex === currentText.length) {
+      // Finished typing, pause, and then start deleting
+      isDeleting = true;
+      setTimeout(typeWriter, pause);
+      return;
+    }
+  } else {
+    // Typing backward (deleting)
+    element.innerHTML = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      // Finished deleting, move to the next text
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length; // Loop back to the first text
+      setTimeout(typeWriter, pause);
+      return;
+    }
+  }
+  // Continue typing or deleting
+  setTimeout(typeWriter, speed);
 }
 
-async function HomePage() {
+// Start the typewriter effect when the page loads
+window.onload = typeWriter;
+
+function HomePage() {
   return (
     <>
       <NavBar />
       <div className={Styles.LandingSection}>
         <div className={Styles.Container}>
           <div className={Styles.Marquee}>
-            <div className={Styles.MarqueeInner}aria-hidden="true">
+            <div className={Styles.MarqueeInner} aria-hidden="true">
               <span>Your Messenger To The World!</span>
             </div>
           </div>
@@ -37,7 +70,7 @@ async function HomePage() {
             want your dashboard to look like this?
           </h2>
           <p className={Styles.LandingDesc}>
-            Well, now it&aposs possible!<br></br> Kudos to Markz Digital Team,
+            Well, now it&apos;s possible!<br></br> Kudos to Markz Digital Team,
             featuring personalised marketing and scaling plans for their
             esteemed clients.
           </p>
@@ -45,7 +78,27 @@ async function HomePage() {
           <button className={Styles.SignUpBtn}>Sign Up</button>
         </div>
       </div>
-      <div className={Styles.IntroductionSection}></div>
+      <div className={Styles.IntroductionSection}>
+        <div className={Styles.ColumnPlaceholder}>
+          <div className={Styles.MarketingGraphic}>
+            <Image
+              src="/assets/photos/vectors/MarketingGraphic.svg"
+              fill={true}
+              loading="lazy"
+              alt="Markz Digital Logo"
+            />
+          </div>
+          <div className={Styles.TextPlaceholder}>
+            <div className={Styles.ProfessionQuestion} id="typewriter"></div>
+            <p className={Styles.ProfessionDesc}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Aspernatur, temporibus praesentium fuga, autem architecto
+              perferendis nesciunt perspiciatis dolorem, officiis ab soluta
+              laborum veniam! Id earum dicta qui quasi facilis numquam?
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

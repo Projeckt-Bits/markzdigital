@@ -9,21 +9,21 @@ function NavBar() {
   return (
     <div className={Styles.NavContainer}>
       <div className={Styles.NavBar}>
-          <div className={Styles.LogoBackground}>
-            <div className={Styles.Logo}>
-              <Link href="/"></Link>
-              <Image
-                src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
-                fill={true}
-                loading="lazy"
-                alt="Markz Digital Logo"
-              />
-            </div>
+        <div className={Styles.LogoBackground}>
+          <div className={Styles.Logo}>
+            <Link href="/"></Link>
+            <Image
+              src="/assets/photos/vectors/MarkzDigitalLogoTransparentBackground.svg"
+              fill={true}
+              loading="lazy"
+              alt="Markz Digital Logo"
+            />
           </div>
+        </div>
         <div className={Styles.NavLinks}>
-          <Link href="/" className={Styles.NavLink}>
+          <a href="/" className={Styles.NavLink}>
             home
-          </Link>
+          </a>
           <Link href="/services" className={Styles.NavLink}>
             services
           </Link>
@@ -31,8 +31,7 @@ function NavBar() {
             about us
           </Link>
         </div>
-        <button className={Styles.LogInBtn}>Log In</button>
-        <button className={Styles.SignUpBtn}>Sign Up</button>
+        <button className={Styles.DashboardBtn}>Dashboard</button>
       </div>
     </div>
   );
