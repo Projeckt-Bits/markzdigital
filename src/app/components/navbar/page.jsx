@@ -22,13 +22,13 @@ function NavBar() {
           </div>
         </div>
         <div className={Styles.NavLinks}>
-          <Link href="/" onClick={() => window.reload()} className={Styles.NavLink}>
+          <Link href="/" className={Styles.NavLink}>
             home
           </Link>
-          <Link href="/services" onClick={() => window.reload()} className={Styles.NavLink}>
+          <Link href="/services" className={Styles.NavLink}>
             services
           </Link>
-          <Link href="/aboutus" onClick={() => window.reload()} className={Styles.NavLink}>
+          <Link href="/aboutus" className={Styles.NavLink}>
             about us
           </Link>
         </div>
