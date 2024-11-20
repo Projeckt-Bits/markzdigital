@@ -15,7 +15,7 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeWriter() {
-  const element = document.getElementById("typewriter");
+  const element = document.getElementById("typeWriter");
   const currentText = texts[textIndex];
 
   if (!isDeleting) {
@@ -45,9 +45,6 @@ function typeWriter() {
   // Continue typing or deleting
   setTimeout(typeWriter, speed);
 }
-
-// Start the typewriter effect when the page loads
-window.onload = typeWriter;
 
 function HomePage() {
   return (
@@ -86,10 +83,11 @@ function HomePage() {
               fill={true}
               loading="lazy"
               alt="Markz Digital Logo"
+              onLoadingComplete={typeWriter}
             />
           </div>
           <div className={Styles.TextPlaceholder}>
-            <div className={Styles.ProfessionQuestion} id="typewriter"></div>
+            <div className={Styles.ProfessionQuestion} id="typeWriter"></div>
             <p className={Styles.ProfessionDesc}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Aspernatur, temporibus praesentium fuga, autem architecto
