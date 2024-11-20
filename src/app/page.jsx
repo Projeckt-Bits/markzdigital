@@ -82,8 +82,8 @@ function HomePage() {
               src="/assets/photos/vectors/MarketingGraphic.svg"
               fill={true}
               loading="lazy"
-              alt="Markz Digital Logo"
-              onLoadingComplete={typeWriter}
+              alt="Markketing Graphic"
+              onLoad={typeWriter}
             />
           </div>
           <div className={Styles.TextPlaceholder}>
