@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import Styles from "./page.module.scss";
 import NavBar from "./components/navbar/page";
 
@@ -50,7 +51,7 @@ function HomePage() {
   return (
     <>
       <NavBar />
-      <div className={Styles.LandingSection}>
+      <div className={Styles.BackGround}>
         <div className={Styles.Container}>
           <div className={Styles.Marquee}>
             <div className={Styles.MarqueeInner} aria-hidden="true">
@@ -63,37 +64,48 @@ function HomePage() {
               Your browser does not support the video tag.
             </video>
           </div>
-          <h2 className={Styles.QuestionToUser}>
-            want your dashboard to look like this?
-          </h2>
-          <p className={Styles.LandingDesc}>
-            Well, now it&apos;s possible!<br></br> Kudos to Markz Digital Team,
-            featuring personalised marketing and scaling plans for their
-            esteemed clients.
-          </p>
+          <div className={Styles.TextContainer}>
+            <h2 className={Styles.QuestionToUser}>
+              want your dashboard to look like this?
+            </h2>
+            <p className={Styles.LandingDesc}>
+              Well, now it&apos;s possible! Kudos to Markz Digital Team,
+              featuring personalised marketing and scaling plans for their
+              esteemed clients.
+            </p>
+          </div>
+        </div>
+
+        <div className={Styles.ButtonContainer}>
           <button className={Styles.LogInBtn}>Log In</button>
           <button className={Styles.SignUpBtn}>Sign Up</button>
         </div>
-      </div>
-      <div className={Styles.IntroductionSection}>
-        <div className={Styles.ColumnPlaceholder}>
-          <div className={Styles.MarketingGraphic}>
-            <Image
-              src="/assets/photos/vectors/MarketingGraphic.svg"
-              fill={true}
-              loading="lazy"
-              alt="Markketing Graphic"
-              onLoad={typeWriter}
-            />
-          </div>
-          <div className={Styles.TextPlaceholder}>
-            <div className={Styles.ProfessionQuestion} id="typeWriter"></div>
-            <p className={Styles.ProfessionDesc}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Aspernatur, temporibus praesentium fuga, autem architecto
-              perferendis nesciunt perspiciatis dolorem, officiis ab soluta
-              laborum veniam! Id earum dicta qui quasi facilis numquam?
-            </p>
+
+        <div className={Styles.ServicesSection}>
+          <div className={Styles.ColumnPlaceholder}>
+            <div className={Styles.ImageContainer}>
+              <div className={Styles.MarketingGraphic}>
+                <Image
+                  src="/assets/photos/vectors/MarketingGraphic.svg"
+                  fill={true}
+                  loading="lazy"
+                  alt="Markketing Graphic"
+                  onLoad={typeWriter}
+                />
+              </div>
+            </div>
+            <div className={Styles.TextPlaceholder}>
+              <div className={Styles.ProfessionQuestion} id="typeWriter"></div>
+              <p className={Styles.ProfessionDesc}>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Aspernatur, temporibus praesentium fuga, autem architecto
+                perferendis nesciunt perspiciatis dolorem, officiis ab soluta
+                laborum veniam! Id earum dicta qui quasi facilis numquam?
+              </p>
+              <button className={Styles.ServicesBtn}>
+                <Link href="/services">Services</Link>
+              </button>
+            </div>
           </div>
         </div>
       </div>

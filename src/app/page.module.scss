@@ -1,11 +1,7 @@
 //CSS For Home Page
-//Landing Section
-.LandingSection {
+//Background
+.BackGround {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   background-image: linear-gradient(135deg, #834fa2, #d85c98, #834fa2, #d85c98);
   background-size: 400% 400%;
   animation: BackDropAnim 16s ease-in-out infinite;
@@ -26,6 +22,12 @@
 //Container
 .Container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
 //Scrolling Text Behind MacBook Reveal Animation
 //Div Containing Scrolling Text
@@ -65,32 +67,46 @@
   aspect-ratio: 16/9;
   width: 100%;
 }
+.TextContainer {
+  position: relative;
+  top: -5.4vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  flex-wrap: wrap;
+}
 //"want your dashboard to look like this?" Title
 .QuestionToUser {
   position: relative;
-  top: -6vw;
-  font-size: 2.1vw;
+  font-size: 45px;
   font-weight: 700;
   color: rgb(255, 255, 255);
+  padding-bottom: 1vw;
 }
 //Description
 .LandingDesc {
   position: relative;
-  top: -6.3vw;
-  font-size: 1.2vw;
+  font-size: 24px;
   font-weight: 600;
   color: rgb(255, 255, 255);
+  padding-bottom: 1vw;
+}
+.ButtonContainer {
+  position: relative;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  top: -3.6vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 //Login & SignUp Button
 .LogInBtn,
 .SignUpBtn {
   position: relative;
+  margin: 1vw;
   width: 125px;
   height: 60px;
-  top: -3.3vw;
-  margin-left: 1vw;
-  margin-left: 1.8vw;
-  margin-right: 1.8vw;
   border: none;
   border-radius: 10px;
   font-size: 1vw;
@@ -115,37 +131,47 @@
 }
 
 //Introduction Section
-.IntroductionSection {
+.ServicesSection {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #929292;
+  flex-wrap: wrap;
 }
 .ColumnPlaceholder {
   position: relative;
+  padding: 3.6vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72vw;
+  gap: 12vw;
+}
+.ImageContainer {
+  position: relative;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 9px 9px 30px #2e2e2e;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 //Marketing Graphic Image
 .MarketingGraphic {
   position: relative;
-  margin-right: 6vw;
-  width: 36vw;
-  height: 36vw;
+  width: 27vw;
+  height: 27vw;
 }
 .TextPlaceholder {
   position: relative;
-  width: 30vw;
-  flex-direction: column;
+  width: 36vw;
+  text-align: left;
 }
 .ProfessionQuestion {
   position: relative;
-  margin-bottom: 1.5vw;
-  min-height: 2.8vw;
-  font-size: 2.1vw;
+  min-height: 3.1vw;
+  font-size: 45px;
+  margin-bottom: 1vw;
   font-weight: 700;
   color: #2e2e2e;
   white-space: pre-wrap; /* Keeps line breaks */
@@ -161,9 +187,29 @@
 
 .ProfessionDesc {
   position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 1.8vw;
 }
-
-
+.ServicesBtn {
+  position: relative;
+  width: 140px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+}
+.ServicesBtn {
+  background-color: #2e2e2ed7;
+  color: white;
+}
+.ServicesBtn:hover {
+  background-color: #2e2e2e;
+}
 
 
 
