@@ -32,7 +32,7 @@ function NavBar() {
             about us
           </Link>
         </div>
-        <button className={Styles.DashboardBtn}>Dashboard</button>
+        <button className={Styles.DashboardBtn}><Link href="/dashboard"> Dashboard</Link></button>
       </div>
     </div>
   );
