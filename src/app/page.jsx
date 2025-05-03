@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Styles from "./page.module.scss";
@@ -9,8 +10,8 @@ const texts = [
   "do you own a business?",
   "want more leads?",
 ];
-const speed = 100; // Typing speed in milliseconds
-const pause = 1000; // Pause before typing/backspacing in milliseconds
+const speed = 100;
+const pause = 1000;
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -19,35 +20,42 @@ function typeWriter() {
   const element = document.getElementById("typeWriter");
   const currentText = texts[textIndex];
 
+  if (!element) return; // Prevents errors if the element isn't found
+
   if (!isDeleting) {
-    // Typing forward
     element.innerHTML += currentText.charAt(charIndex);
     charIndex++;
 
     if (charIndex === currentText.length) {
-      // Finished typing, pause, and then start deleting
       isDeleting = true;
       setTimeout(typeWriter, pause);
       return;
     }
   } else {
-    // Typing backward (deleting)
     element.innerHTML = currentText.substring(0, charIndex - 1);
     charIndex--;
 
     if (charIndex === 0) {
-      // Finished deleting, move to the next text
       isDeleting = false;
-      textIndex = (textIndex + 1) % texts.length; // Loop back to the first text
+      textIndex = (textIndex + 1) % texts.length;
       setTimeout(typeWriter, pause);
       return;
     }
   }
-  // Continue typing or deleting
   setTimeout(typeWriter, speed);
 }
 
 function HomePage() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 10000); // Show popup after 10 seconds
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -89,7 +97,7 @@ function HomePage() {
                   src="/assets/photos/vectors/MarketingGraphic.svg"
                   fill={true}
                   loading="lazy"
-                  alt="Markketing Graphic"
+                  alt="Marketing Graphic"
                   onLoad={typeWriter}
                 />
               </div>
@@ -109,8 +117,31 @@ function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className={Styles.Overlay}>
+          <div className={Styles.Popup}>
+            <Image
+              src="/assets/photos/popup-image.jpg"
+              width={300}
+              height={200}
+              alt="Special Offer"
+              className={Styles.PopupImage}
+            />
+            <h2>Special Offer!</h2>
+            <p>Click below to grab this deal.</p>
+            <Link href="/offer">
+              <button className={Styles.PopupButton}>Learn More</button>
+            </Link>
+            <button className={Styles.CloseButton} onClick={() => setShowPopup(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
 
-export default HomePage; // Export the HomePage component
+export default HomePage;

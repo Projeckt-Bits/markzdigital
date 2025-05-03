@@ -51,7 +51,7 @@ const servicesData = [
     image: "/images/content-creation.jpg",
   },
   {
-    title: "Social Media Management",
+    title: "Social Media",
     description: "Build your brand presence across social media platforms.",
     link: "/services/social-media-management",
     image: "/images/social-media-management.jpg",

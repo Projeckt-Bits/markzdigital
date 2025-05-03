@@ -23,13 +23,16 @@ function NavBar() {
         </div>
         <div className={Styles.NavLinks}>
           <Link href="/" className={Styles.NavLink}>
-            home
+            Home
           </Link>
           <Link href="/services" className={Styles.NavLink}>
-            services
+            Services
           </Link>
           <Link href="/aboutus" className={Styles.NavLink}>
-            about us
+            About Us
+          </Link>
+          <Link href="/aboutus" className={Styles.NavLink}>
+            Our Projects
           </Link>
         </div>
         <button className={Styles.DashboardBtn}><Link href="/dashboard"> Dashboard</Link></button>
