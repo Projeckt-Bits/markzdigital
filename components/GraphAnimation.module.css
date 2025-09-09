@@ -1,0 +1,74 @@
+/* src/components/GraphAnimation.module.css */
+
+.graphContainer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10,20,40,1) 0%, rgba(15,30,60,1) 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  overflow: visible;
+}
+
+.graphPath {
+  stroke: #00ff99;
+  stroke-width: 1.5; /* <-- 1. Thinner line */
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+
+  /* Increased for the new, longer path. A large number ensures it's fully hidden. */
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+
+  /* 2. Removed 'alternate' to stop the animation from going in reverse */
+  animation: drawGraph 5s linear infinite;
+}
+
+.yAxisContainer {
+  position: relative;
+  top: 10vw;
+  width: 30px;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.yAxis {
+  list-style: none;
+  border-right: #00ff99 1px solid;
+}
+
+.xAxis {
+  list-style: none;
+  border-top: #00ff99 1px solid ;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 3. Refined keyframes for a forward-only loop */
+@keyframes drawGraph {
+  0% {
+    stroke-dashoffset: 2000; /* Start fully hidden */
+    opacity: 1;
+  }
+  80% {
+    stroke-dashoffset: 0;    /* Fully drawn for most of the duration */
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;    /* End in a fully drawn state but... */
+    opacity: 1;             /* ...fade out instantly before the loop restarts */
+  }
+} 

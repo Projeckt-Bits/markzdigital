@@ -1,0 +1,44 @@
+/* app/components/ChartStyles.module.css */
+
+/* This class will control the size of our chart's container */
+.chartContainer {
+  /* Make the chart smaller */
+  width: 100%;
+  max-width: 800px; /* Control max width */
+  height: 400px;    /* Control height */
+  margin: auto;   
+  z-index: 100;  /* Center it on the page */
+}
+
+/* Now, we target the specific class names that Recharts uses for its SVG text.
+  This is the key to styling the chart's internal elements from an external file.
+*/
+
+/* Style the text for the X and Y axis ticks (e.g., "2015", "$200B") */
+.chartContainer :global(.recharts-cartesian-axis-tick-value) {
+  font-family: var(--font-poppins), sans-serif; /* Use the Inter font variable, with fallback */
+  font-size: 12px;
+  fill: #666; /* Change the color of the tick text */
+}
+
+/* Style the text for the legend (e.g., "Digital Spend") */
+.chartContainer :global(.recharts-legend-item-text) {
+  color: #ffffff;
+  font-family: var(--font-poppins), sans-serif; /* Use the Poppins font variable, with fallback */
+  font-size: 14px;
+}
+
+/* Style the main axis labels (e.g., "Ad Spend (in Billions USD)") */
+.chartContainer :global(.recharts-label) {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 14px;
+}
+
+/* Style our custom tooltip */
+.customTooltip {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-inter), sans-serif; /* Apply font to the tooltip */
+}
